@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portimão Services</title>
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ==============================
+       HEADER
+  =============================== -->
+  <header class="header">
+
+    <div class="logo">
+      🌴 Portimão Services
+    </div>
+
+    <!-- ===== LANGUAGE ===== -->
+    <select id="language">
+      <option value="en">🇬🇧 English</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+    </select>
+
+  </header>
+
+
+  <!-- ==============================
+       HERO
+  =============================== -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="location">
+          📍 Portimão, Portugal
+        </span>
+
+        <h1>
+          Services when you need them.
+        </h1>
+
+        <p>
+          Book trusted local services quickly and easily.
+        </p>
+
+        <!-- ===== START BOOKING ===== -->
+        <button
+          class="primary-button"
+          onclick="startBooking()">
+
+          Find a Service
+
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         SERVICES
+    =============================== -->
+
+    <section class="services-section">
+
+      <h2>Popular Services</h2>
+
+      <div id="services-container">
+
+        <!-- ===== SERVICES WILL LOAD HERE ===== -->
+
+        <div class="service-card">
+
+          <div class="service-icon">🧹</div>
+
+          <h3>Cleaning</h3>
+
+          <p>
+            From €20 / hour
+          </p>
+
+          <button onclick="selectService('Cleaning')">
+            Book
+          </button>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🔧</div>
+
+          <h3>Maintenance</h3>
+
+          <p>
+            From €30 / hour
+          </p>
+
+          <button onclick="selectService('Maintenance')">
+            Book
+          </button>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🌿</div>
+
+          <h3>Gardening</h3>
+
+          <p>
+            From €25 / hour
+          </p>
+
+          <button onclick="selectService('Gardening')">
+            Book
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         HOW IT WORKS
+    =============================== -->
+
+    <section class="how-section">
+
+      <h2>How it works</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <strong>1</strong>
+          <p>Choose a service</p>
+        </div>
+
+        <div class="step">
+          <strong>2</strong>
+          <p>Choose date and time</p>
+        </div>
+
+        <div class="step">
+          <strong>3</strong>
+          <p>Choose your location</p>
+        </div>
+
+        <div class="step">
+          <strong>4</strong>
+          <p>Pay online</p>
+        </div>
+
+        <div class="step">
+          <strong>5</strong>
+          <p>Service confirmed</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         TOURIST LOCATION
+    =============================== -->
+
+    <section class="location-section">
+
+      <h2>Your Service Location</h2>
+
+      <p>
+        Allow location access or enter your address manually.
+      </p>
+
+      <!-- ===== GPS WILL BE CONNECTED HERE ===== -->
+
+      <button
+        class="location-button"
+        onclick="getLocation()">
+
+        📍 Use my current location
+
+      </button>
+
+      <div id="location-result">
+        Location not selected
+      </div>
+
+      <!-- ===== ADDRESS ===== -->
+
+      <input
+        type="text"
+        id="address"
+        placeholder="Enter your address">
+
+    </section>
+
+
+    <!-- ==============================
+         PROVIDER
+    =============================== -->
+
+    <section class="provider-section">
+
+      <h2>Are you a Service Provider?</h2>
+
+      <p>
+        Register your services and receive bookings from tourists.
+      </p>
+
+      <button onclick="providerRegister()">
+        Become a Service Provider
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  =============================== -->
+
+  <footer>
+
+    <div>
+      <strong>Portimão Services</strong>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
+    </div>
+
+    <p>
+      © 2026 Portimão Services
+    </p>
+
+  </footer>
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  =============================== -->
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
