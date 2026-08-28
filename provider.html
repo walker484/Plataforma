@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Service Provider Registration</title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- ==============================
+       HEADER
+  =============================== -->
+
+  <header class="header">
+
+    <div class="logo">
+      🌴 Portimão Services
+    </div>
+
+    <select id="language">
+
+      <option value="en">
+        🇬🇧 English
+      </option>
+
+      <option value="de">
+        🇩🇪 Deutsch
+      </option>
+
+      <option value="nl">
+        🇳🇱 Nederlands
+      </option>
+
+    </select>
+
+  </header>
+
+
+
+  <!-- ==============================
+       PROVIDER REGISTRATION
+  =============================== -->
+
+  <main class="provider-page">
+
+
+    <div class="provider-header">
+
+      <div class="icon">
+        🧑‍🔧
+      </div>
+
+      <h1>
+        Become a Service Provider
+      </h1>
+
+      <p>
+        Register your services and receive bookings from tourists.
+      </p>
+
+    </div>
+
+
+
+    <form
+      class="provider-form"
+      id="providerForm"
+    >
+
+
+      <!-- ==========================
+           PERSONAL DATA
+      =========================== -->
+
+      <section class="form-section">
+
+        <h2>
+          👤 Personal Information
+        </h2>
+
+
+        <div class="form-group">
+
+          <label for="fullName">
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Your full name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="phone">
+            Phone
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="+351 ..."
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="your@email.com"
+            required
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==========================
+           SERVICE
+      =========================== -->
+
+      <section class="form-section">
+
+        <h2>
+          🛠️ Service Information
+        </h2>
+
+
+        <div class="form-group">
+
+          <label for="service">
+            What service do you provide?
+          </label>
+
+          <select
+            id="service"
+            required
+          >
+
+            <option value="">
+              Select a service
+            </option>
+
+            <option value="cleaning">
+              🧹 Cleaning
+            </option>
+
+            <option value="maintenance">
+              🔧 Maintenance
+            </option>
+
+            <option value="gardening">
+              🌿 Gardening
+            </option>
+
+            <option value="repairs">
+              🛠️ Repairs
+            </option>
+
+            <option value="tourist-assistance">
+              🧳 Tourist Assistance
+            </option>
+
+            <option value="delivery">
+              📦 Delivery
+            </option>
+
+            <option value="car-services">
+              🚗 Car Services
+            </option>
+
+            <option value="other">
+              ➕ Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="description">
+            Describe your service
+          </label>
+
+          <textarea
+            id="description"
+            placeholder="Tell tourists what you offer..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="price">
+            Price per hour
+          </label>
+
+          <input
+            type="number"
+            id="price"
+            min="1"
+            step="0.01"
+            placeholder="20.00"
+            required
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==========================
+           AVAILABILITY
+      =========================== -->
+
+      <section class="form-section">
+
+        <h2>
+          📅 Availability
+        </h2>
+
+
+        <div class="form-group">
+
+          <label>
+            Available Days
+          </label>
+
+
+          <div class="days">
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="monday"
+              >
+              Monday
+            </label>
+
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="tuesday"
+              >
+              Tuesday
+            </label>
+
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="wednesday"
+              >
+              Wednesday
+            </label>
+
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="thursday"
+              >
+              Thursday
+            </label>
+
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="friday"
+              >
+              Friday
+            </label>
+
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="saturday"
+              >
+              Saturday
+            </label>
+
+
+            <label class="day">
+              <input
+                type="checkbox"
+                value="sunday"
+              >
+              Sunday
+            </label>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="time-row">
+
+          <div class="form-group">
+
+            <label for="startTime">
+              From
+            </label>
+
+            <input
+              type="time"
+              id="startTime"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="endTime">
+              Until
+            </label>
+
+            <input
+              type="time"
+              id="endTime"
+              required
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==========================
+           SERVICE AREA
+      =========================== -->
+
+      <section class="form-section">
+
+        <h2>
+          📍 Service Area
+        </h2>
+
+
+        <div class="form-group">
+
+          <label for="area">
+            Main service area
+          </label>
+
+          <select id="area">
+
+            <option>
+              Portimão
+            </option>
+
+            <option>
+              Alvor
+            </option>
+
+            <option>
+              Praia da Rocha
+            </option>
+
+            <option>
+              Lagos
+            </option>
+
+            <option>
+              Lagoa
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- GPS -->
+
+        <!-- ===== GPS WILL BE CONNECTED HERE ===== -->
+
+        <button
+          type="button"
+          class="location-button"
+          onclick="getProviderLocation()"
+        >
+
+          📍 Use my current location
+
+        </button>
+
+
+        <div
+          class="location-result"
+          id="providerLocation"
+        >
+
+          Location not selected
+
+        </div>
+
+        <!-- ===== END GPS ===== -->
+
+      </section>
+
+
+
+      <!-- ==========================
+           BANK DETAILS
+      =========================== -->
+
+      <section class="form-section">
+
+        <h2>
+          💰 Payment Details
+        </h2>
+
+
+        <div class="bank-notice">
+
+          Your payment details will be used
+          to pay you after completed services.
+
+        </div>
+
+
+        <!-- ===== BANK DATA ===== -->
+
+        <div class="form-group">
+
+          <label for="accountHolder">
+            Account Holder Name
+          </label>
+
+          <input
+            type="text"
+            id="accountHolder"
+            placeholder="Account holder name"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="iban">
+            IBAN
+          </label>
+
+          <input
+            type="text"
+            id="iban"
+            placeholder="Your IBAN"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="bankName">
+            Bank Name
+          </label>
+
+          <input
+            type="text"
+            id="bankName"
+            placeholder="Bank name"
+          >
+
+        </div>
+
+        <!-- ===== END BANK DATA ===== -->
+
+      </section>
+
+
+
+      <!-- ==========================
+           TERMS
+      =========================== -->
+
+      <div class="terms">
+
+        <input
+          type="checkbox"
+          id="terms"
+          required
+        >
+
+        <label for="terms">
+
+          I confirm that the information
+          provided is correct.
+
+        </label>
+
+      </div>
+
+
+
+      <!-- ==========================
+           SUBMIT
+      =========================== -->
+
+      <button
+        type="submit"
+        class="submit-provider"
+      >
+
+        Create Provider Account
+
+      </button>
+
+
+    </form>
+
+  </main>
+
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  =============================== -->
+
+  <script src="js/app.js"></script>
+
+
+  <script>
+
+    // =================================
+    // PROVIDER GPS
+    // =================================
+
+    function getProviderLocation() {
+
+      const result =
+        document.getElementById(
+          "providerLocation"
+        );
+
+
+      if (!navigator.geolocation) {
+
+        result.textContent =
+          "Location is not supported.";
+
+        return;
+      }
+
+
+      result.textContent =
+        "Getting your location...";
+
+
+      navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+          const latitude =
+            position.coords.latitude;
+
+          const longitude =
+            position.coords.longitude;
+
+
+          result.innerHTML =
+            "📍 Location selected<br>" +
+            "Latitude: " +
+            latitude.toFixed(6) +
+            "<br>" +
+            "Longitude: " +
+            longitude.toFixed(6);
+
+        },
+
+        function() {
+
+          result.textContent =
+            "Unable to get location.";
+
+        }
+
+      );
+
+    }
+
+
+
+    // =================================
+    // PROVIDER FORM
+    // =================================
+
+    document
+      .getElementById("providerForm")
+      .addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+          alert(
+            "Provider registration received!"
+          );
+
+          /*
+          ====================================
+          FIREBASE WILL BE CONNECTED HERE
+          ====================================
+
+          Save:
+
+          - name
+          - phone
+          - email
+          - service
+          - description
+          - price per hour
+          - available days
+          - start time
+          - end time
+          - service area
+          - GPS location
+          - bank details
+
+          ====================================
+          */
+
+        }
+      );
+
+  </script>
+
+
+</body>
+
+</html>
