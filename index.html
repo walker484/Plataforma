@@ -1,19 +1,239 @@
+
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
+<title>Serviços</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<style>
 
-  <title>Portimão Services</title>
+*{
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-  <!-- ===== CSS ===== -->
-  <link rel="stylesheet" href="css/style.css">
+body{
+  margin:0;
+  background:#f3f4f6;
+  color:#111827;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+select{
+  padding:9px;
+  border-radius:10px;
+  border:0;
+}
+
+.container{
+  max-width:650px;
+  margin:auto;
+  padding:20px;
+}
+
+.hero{
+  background:white;
+  padding:25px 20px;
+  border-radius:20px;
+  margin-bottom:20px;
+  box-shadow:0 4px 15px #00000010;
+}
+
+.hero h1{
+  margin:8px 0;
+}
+
+.hero p{
+  color:#666;
+}
+
+.modo{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.modo button{
+  flex:1;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  font-weight:bold;
+  background:#e5e7eb;
+  cursor:pointer;
+}
+
+.modo button.ativo{
+  background:#111827;
+  color:white;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:15px;
+  box-shadow:0 4px 15px #00000010;
+}
+
+.card h2{
+  margin-top:0;
+}
+
+.servicos{
+  display:grid;
+  gap:12px;
+}
+
+.servico{
+  border:2px solid #e5e7eb;
+  padding:16px;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+.servico:hover{
+  border-color:#2563eb;
+}
+
+.servico.selecionado{
+  border-color:#2563eb;
+  background:#eff6ff;
+}
+
+.servico h3{
+  margin:0 0 5px;
+}
+
+.servico p{
+  margin:0;
+  color:#666;
+}
+
+label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+input,
+textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:11px;
+  margin-bottom:15px;
+  font-size:16px;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.principal{
+  width:100%;
+  padding:15px;
+  background:#2563eb;
+  color:white;
+  border:0;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.principal:disabled{
+  opacity:.5;
+}
+
+.mensagem{
+  text-align:center;
+  margin-top:12px;
+  font-weight:bold;
+}
+
+.pedido{
+  border:1px solid #e5e7eb;
+  border-radius:15px;
+  padding:16px;
+  margin-bottom:12px;
+}
+
+.pedido strong{
+  font-size:17px;
+}
+
+.pedido-info{
+  line-height:1.7;
+  margin-top:10px;
+}
+
+.aceitar{
+  width:100%;
+  padding:13px;
+  background:#16a34a;
+  color:white;
+  border:0;
+  border-radius:10px;
+  font-weight:bold;
+  margin-top:12px;
+}
+
+.recusar{
+  width:100%;
+  padding:13px;
+  background:#fee2e2;
+  color:#b91c1c;
+  border:0;
+  border-radius:10px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+.status{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:20px;
+  background:#f3f4f6;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.vazio{
+  text-align:center;
+  color:#777;
+  padding:20px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+
+</style>
 
 </head>
 
@@ -21,341 +241,1016 @@
 <body>
 
 
-  <!-- =================================
-       HEADER
-  ================================= -->
+<header>
 
-  <header class="header">
+<div class="logo">
+🌐 Serviços
+</div>
 
-    <div class="logo">
-      🌴 Portimão Services
-    </div>
+<select id="idioma">
 
-    <select id="language">
+<option value="pt-BR">
+🇧🇷 Português (Brasil)
+</option>
 
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="nl">🇳🇱 Nederlands</option>
+<option value="pt-PT">
+🇵🇹 Português (Portugal)
+</option>
 
-    </select>
+<option value="en">
+🇬🇧 English
+</option>
 
-  </header>
+</select>
 
+</header>
 
 
-  <!-- =================================
-       HERO
-  ================================= -->
+<div class="container">
 
-  <section class="hero">
 
-    <div class="hero-content">
+<!-- MODO -->
 
-      <span class="location">
-        📍 Portimão, Portugal
-      </span>
+<div class="modo">
 
-      <h1>
-        Services when you need them.
-      </h1>
+<button
+id="clienteBtn"
+class="ativo"
+onclick="mostrarCliente()">
 
-      <p>
-        Book trusted local services quickly and easily.
-      </p>
+👤 Cliente
 
-      <button
-        class="primary-button"
-        onclick="startBooking()"
-      >
-        Find a Service
-      </button>
+</button>
 
-    </div>
 
-  </section>
+<button
+id="prestadorBtn"
+onclick="mostrarPrestador()">
 
+👷 Prestador
 
+</button>
 
-  <!-- =================================
-       SERVICES
-  ================================= -->
+</div>
 
-  <section class="services-section">
 
-    <h2>
-      Popular Services
-    </h2>
+<!-- =========================
+     CLIENTE
+========================= -->
 
+<section id="cliente">
 
-    <div id="services-container">
 
+<div class="hero">
 
-      <div class="service-card">
+<div>📍 Brasil</div>
 
-        <div class="service-icon">
-          🧹
-        </div>
+<h1 id="titulo">
+Encontre um serviço
+</h1>
 
-        <h3>
-          Cleaning
-        </h3>
+<p id="subtitulo">
+Escolha um serviço e faça seu pedido rapidamente.
+</p>
 
-        <p>
-          From €20 / hour
-        </p>
+</div>
 
-        <button
-          onclick="selectService('Cleaning')"
-        >
-          Book
-        </button>
 
-      </div>
+<div class="card">
 
+<h2 id="tituloServicos">
+Serviços
+</h2>
 
 
-      <div class="service-card">
+<div class="servicos">
 
-        <div class="service-icon">
-          🔧
-        </div>
 
-        <h3>
-          Maintenance
-        </h3>
+<div
+class="servico"
+onclick="selecionarServico('Limpeza',this)">
 
-        <p>
-          From €30 / hour
-        </p>
+<h3>🧹 Limpeza</h3>
 
-        <button
-          onclick="selectService('Maintenance')"
-        >
-          Book
-        </button>
+<p>A partir de R$ 20 / hora</p>
 
-      </div>
+</div>
 
 
+<div
+class="servico"
+onclick="selecionarServico('Manutenção',this)">
 
-      <div class="service-card">
+<h3>🔧 Manutenção</h3>
 
-        <div class="service-icon">
-          🌿
-        </div>
+<p>A partir de R$ 30 / hora</p>
 
-        <h3>
-          Gardening
-        </h3>
+</div>
 
-        <p>
-          From €25 / hour
-        </p>
 
-        <button
-          onclick="selectService('Gardening')"
-        >
-          Book
-        </button>
+<div
+class="servico"
+onclick="selecionarServico('Jardinagem',this)">
 
-      </div>
+<h3>🌿 Jardinagem</h3>
 
+<p>A partir de R$ 25 / hora</p>
 
-    </div>
+</div>
 
-  </section>
 
+<div
+class="servico"
+onclick="selecionarServico('Pintura',this)">
 
+<h3>🎨 Pintura</h3>
 
-  <!-- =================================
-       HOW IT WORKS
-  ================================= -->
+<p>A partir de R$ 40 / hora</p>
 
-  <section class="how-section">
+</div>
 
-    <h2>
-      How it works
-    </h2>
 
+</div>
 
-    <div class="steps">
+</div>
 
 
-      <div class="step">
+<div class="card">
 
-        <strong>1</strong>
+<h2>
+📋 Dados do pedido
+</h2>
 
-        <p>
-          Choose a service
-        </p>
 
-      </div>
+<label>
+Nome
+</label>
 
+<input
+id="clienteNome"
+type="text"
+placeholder="Seu nome">
 
-      <div class="step">
 
-        <strong>2</strong>
+<label>
+Telefone
+</label>
 
-        <p>
-          Choose date and time
-        </p>
+<input
+id="clienteTelefone"
+type="tel"
+placeholder="Seu telefone">
 
-      </div>
 
+<label>
+Data
+</label>
 
-      <div class="step">
+<input
+id="dataPedido"
+type="date">
 
-        <strong>3</strong>
 
-        <p>
-          Choose your location
-        </p>
+<label>
+Horário
+</label>
 
-      </div>
+<input
+id="horaPedido"
+type="time">
 
 
-      <div class="step">
+<label>
+Endereço
+</label>
 
-        <strong>4</strong>
+<input
+id="endereco"
+type="text"
+placeholder="Endereço do serviço">
 
-        <p>
-          Pay online
-        </p>
 
-      </div>
+<label>
+Observação
+</label>
 
+<textarea
+id="observacao"
+placeholder="Explique o que precisa"></textarea>
 
-      <div class="step">
 
-        <strong>5</strong>
+<button
+class="principal"
+id="enviarPedido"
+onclick="enviarPedido()">
 
-        <p>
-          Service confirmed
-        </p>
+📩 Enviar pedido
 
-      </div>
+</button>
 
 
-    </div>
+<div
+id="mensagemCliente"
+class="mensagem">
+</div>
 
-  </section>
+</div>
 
+</section>
 
 
-  <!-- =================================
-       LOCATION
-  ================================= -->
+<!-- =========================
+     PRESTADOR
+========================= -->
 
-  <section class="location-section">
+<section
+id="prestador"
+style="display:none">
 
-    <h2>
-      Your Service Location
-    </h2>
 
-    <p>
-      Allow location access or enter your address manually.
-    </p>
+<div class="hero">
 
+<div>👷 Prestador</div>
 
-    <button
-      class="location-button"
-      onclick="getLocation()"
-    >
+<h1>
+Pedidos recebidos
+</h1>
 
-      📍 Use my current location
+<p>
+Aqui aparecem os pedidos enviados pelos clientes.
+</p>
 
-    </button>
+</div>
 
 
-    <div id="location-result">
+<div class="card">
 
-      Location not selected
+<h2>
+📥 Novos pedidos
+</h2>
 
-    </div>
 
+<div id="listaPedidos">
 
-    <input
-      type="text"
-      id="address"
-      placeholder="Enter your address"
-    >
+<div class="vazio">
+Carregando pedidos...
+</div>
 
-  </section>
+</div>
 
+</div>
 
+</section>
 
-  <!-- =================================
-       SERVICE PROVIDER
-  ================================= -->
 
-  <section class="provider-section">
+</div>
 
-    <h2>
-      Are you a Service Provider?
-    </h2>
 
-    <p>
-      Register your services and receive bookings from tourists.
-    </p>
+<footer>
 
+🌐 Serviços
 
-    <button onclick="providerRegister()">
+<br><br>
 
-      Become a Service Provider
+© 2026
 
-    </button>
+</footer>
 
-  </section>
 
 
+<script type="module">
 
-  <!-- =================================
-       FOOTER
-  ================================= -->
 
-  <footer>
+/* =========================
+   FIREBASE
+========================= */
 
-    <strong>
-      🌴 Portimão Services
-    </strong>
+import {
+initializeApp
+}
 
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-    <div class="footer-links">
 
-      <a href="#">
-        About
-      </a>
+import {
 
-      <a href="#">
-        Services
-      </a>
+getFirestore,
+collection,
+addDoc,
+onSnapshot,
+doc,
+updateDoc
 
-      <a href="#">
-        Contact
-      </a>
+}
 
-      <a href="#">
-        Terms
-      </a>
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    </div>
 
+const firebaseConfig = {
 
-    <p>
-      © 2026 Portimão Services
-    </p>
+apiKey:
+"AIzaSyCL6zN5WSnqpjCg4gkmAJPurFrlMWEonco",
 
-  </footer>
+authDomain:
+"banco-dados-94bb6.firebaseapp.com",
 
+projectId:
+"banco-dados-94bb6",
 
+storageBucket:
+"banco-dados-94bb6.firebasestorage.app",
 
-  <!-- =================================
-       JAVASCRIPT
-  ================================= -->
+messagingSenderId:
+"496860851807",
 
-  <script src="js/app.js"></script>
+appId:
+"1:496860851807:web:3e830aabc6463dd51275ea"
 
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+let servicoSelecionado = "";
+
+let pedidos = [];
+
+
+/* =========================
+   CLIENTE / PRESTADOR
+========================= */
+
+window.mostrarCliente = function(){
+
+document
+.getElementById("cliente")
+.style.display = "block";
+
+document
+.getElementById("prestador")
+.style.display = "none";
+
+document
+.getElementById("clienteBtn")
+.classList.add("ativo");
+
+document
+.getElementById("prestadorBtn")
+.classList.remove("ativo");
+
+};
+
+
+window.mostrarPrestador = function(){
+
+document
+.getElementById("cliente")
+.style.display = "none";
+
+document
+.getElementById("prestador")
+.style.display = "block";
+
+document
+.getElementById("clienteBtn")
+.classList.remove("ativo");
+
+document
+.getElementById("prestadorBtn")
+.classList.add("ativo");
+
+};
+
+
+window.selecionarServico =
+function(nome, elemento){
+
+servicoSelecionado = nome;
+
+
+document
+.querySelectorAll(".servico")
+.forEach(item => {
+
+item.classList.remove("selecionado");
+
+});
+
+
+elemento.classList.add("selecionado");
+
+};
+
+
+/* =========================
+   DATA
+========================= */
+
+function dataHoje(){
+
+const d = new Date();
+
+return (
+
+d.getFullYear() +
+"-" +
+String(d.getMonth()+1).padStart(2,"0") +
+"-" +
+String(d.getDate()).padStart(2,"0")
+
+);
+
+}
+
+
+document
+.getElementById("dataPedido")
+.value =
+dataHoje();
+
+
+/* =========================
+   ENVIAR PEDIDO
+========================= */
+
+window.enviarPedido =
+async function(){
+
+
+const nome =
+document
+.getElementById("clienteNome")
+.value.trim();
+
+
+const telefone =
+document
+.getElementById("clienteTelefone")
+.value.trim();
+
+
+const data =
+document
+.getElementById("dataPedido")
+.value;
+
+
+const hora =
+document
+.getElementById("horaPedido")
+.value;
+
+
+const endereco =
+document
+.getElementById("endereco")
+.value.trim();
+
+
+const observacao =
+document
+.getElementById("observacao")
+.value.trim();
+
+
+const mensagem =
+document
+.getElementById("mensagemCliente");
+
+
+if(!servicoSelecionado){
+
+mensagem.innerText =
+"❌ Escolha um serviço.";
+
+return;
+
+}
+
+
+if(!nome){
+
+mensagem.innerText =
+"❌ Digite seu nome.";
+
+return;
+
+}
+
+
+if(!telefone){
+
+mensagem.innerText =
+"❌ Digite seu telefone.";
+
+return;
+
+}
+
+
+if(!data){
+
+mensagem.innerText =
+"❌ Escolha a data.";
+
+return;
+
+}
+
+
+if(!hora){
+
+mensagem.innerText =
+"❌ Escolha o horário.";
+
+return;
+
+}
+
+
+if(!endereco){
+
+mensagem.innerText =
+"❌ Digite o endereço.";
+
+return;
+
+}
+
+
+mensagem.innerText =
+"Enviando pedido...";
+
+
+try{
+
+
+await addDoc(
+
+collection(db,"pedidos"),
+
+{
+
+servico:
+servicoSelecionado,
+
+cliente:
+nome,
+
+telefone:
+telefone,
+
+data:
+data,
+
+hora:
+hora,
+
+endereco:
+endereco,
+
+observacao:
+observacao,
+
+status:
+"novo",
+
+criadoEm:
+Date.now()
+
+}
+
+);
+
+
+mensagem.innerText =
+"✅ Pedido enviado com sucesso!";
+
+
+document
+.getElementById("clienteNome")
+.value = "";
+
+
+document
+.getElementById("clienteTelefone")
+.value = "";
+
+
+document
+.getElementById("endereco")
+.value = "";
+
+
+document
+.getElementById("observacao")
+.value = "";
+
+
+servicoSelecionado = "";
+
+
+document
+.querySelectorAll(".servico")
+.forEach(item => {
+
+item.classList.remove("selecionado");
+
+});
+
+
+}catch(erro){
+
+console.error(erro);
+
+mensagem.innerText =
+"❌ Erro: " +
+erro.message;
+
+}
+
+};
+
+
+/* =========================
+   PEDIDOS DO PRESTADOR
+========================= */
+
+onSnapshot(
+
+collection(db,"pedidos"),
+
+(snapshot) => {
+
+
+pedidos = [];
+
+
+snapshot.forEach(item => {
+
+pedidos.push({
+
+id:item.id,
+
+...item.data()
+
+});
+
+});
+
+
+pedidos.sort(
+(a,b) =>
+(b.criadoEm || 0) -
+(a.criadoEm || 0)
+);
+
+
+mostrarPedidos();
+
+},
+
+(erro) => {
+
+console.error(erro);
+
+document
+.getElementById("listaPedidos")
+.innerHTML =
+
+"<div class='vazio'>❌ Erro ao carregar pedidos: " +
+erro.message +
+"</div>";
+
+}
+
+);
+
+
+/* =========================
+   MOSTRAR PEDIDOS
+========================= */
+
+function mostrarPedidos(){
+
+const lista =
+document
+.getElementById("listaPedidos");
+
+
+lista.innerHTML = "";
+
+
+if(pedidos.length === 0){
+
+lista.innerHTML =
+
+"<div class='vazio'>" +
+"📭 Nenhum pedido recebido." +
+"</div>";
+
+return;
+
+}
+
+
+pedidos.forEach(pedido => {
+
+
+const div =
+document.createElement("div");
+
+
+div.className =
+"pedido";
+
+
+let statusTexto =
+pedido.status === "novo"
+? "🟡 NOVO"
+: pedido.status === "aceito"
+? "🟢 ACEITO"
+: "🔴 RECUSADO";
+
+
+div.innerHTML = `
+
+<strong>
+${pedido.servico}
+</strong>
+
+<br><br>
+
+<span class="status">
+${statusTexto}
+</span>
+
+
+<div class="pedido-info">
+
+👤 <b>Cliente:</b>
+${pedido.cliente}
+
+<br>
+
+📞 <b>Telefone:</b>
+${pedido.telefone}
+
+<br>
+
+📅 <b>Data:</b>
+${formatarData(pedido.data)}
+
+<br>
+
+⏰ <b>Horário:</b>
+${pedido.hora}
+
+<br>
+
+📍 <b>Endereço:</b>
+${pedido.endereco}
+
+${pedido.observacao
+? `<br>📝 <b>Observação:</b> ${pedido.observacao}`
+: ""}
+
+</div>
+
+
+${
+pedido.status === "novo"
+
+?
+
+`
+
+<button
+class="aceitar"
+onclick="aceitarPedido('${pedido.id}')">
+
+✅ ACEITAR PEDIDO
+
+</button>
+
+
+<button
+class="recusar"
+onclick="recusarPedido('${pedido.id}')">
+
+❌ RECUSAR PEDIDO
+
+</button>
+
+`
+
+:
+
+""
+
+}
+
+`;
+
+
+lista.appendChild(div);
+
+});
+
+}
+
+
+/* =========================
+   ACEITAR
+========================= */
+
+window.aceitarPedido =
+async function(id){
+
+try{
+
+await updateDoc(
+
+doc(db,"pedidos",id),
+
+{
+
+status:
+"aceito",
+
+aceitoEm:
+Date.now()
+
+}
+
+);
+
+}catch(erro){
+
+alert(
+"Erro: " +
+erro.message
+);
+
+}
+
+};
+
+
+/* =========================
+   RECUSAR
+========================= */
+
+window.recusarPedido =
+async function(id){
+
+try{
+
+await updateDoc(
+
+doc(db,"pedidos",id),
+
+{
+
+status:
+"recusado",
+
+recusadoEm:
+Date.now()
+
+}
+
+);
+
+}catch(erro){
+
+alert(
+"Erro: " +
+erro.message
+);
+
+}
+
+};
+
+
+/* =========================
+   FORMATAR DATA
+========================= */
+
+function formatarData(data){
+
+if(!data) return "";
+
+const partes =
+data.split("-");
+
+if(partes.length !== 3)
+return data;
+
+return (
+
+partes[2] +
+"/" +
+partes[1] +
+"/" +
+partes[0]
+
+);
+
+}
+
+
+/* =========================
+   IDIOMAS
+========================= */
+
+const idioma =
+document.getElementById("idioma");
+
+
+idioma.onchange =
+function(){
+
+const valor =
+this.value;
+
+
+if(valor === "pt-BR"){
+
+document
+.getElementById("titulo")
+.innerText =
+"Encontre um serviço";
+
+document
+.getElementById("subtitulo")
+.innerText =
+"Escolha um serviço e faça seu pedido rapidamente.";
+
+document
+.getElementById("tituloServicos")
+.innerText =
+"Serviços";
+
+}
+
+
+if(valor === "pt-PT"){
+
+document
+.getElementById("titulo")
+.innerText =
+"Encontre um serviço";
+
+document
+.getElementById("subtitulo")
+.innerText =
+"Escolha um serviço e faça o seu pedido rapidamente.";
+
+document
+.getElementById("tituloServicos")
+.innerText =
+"Serviços";
+
+}
+
+
+if(valor === "en"){
+
+document
+.getElementById("titulo")
+.innerText =
+"Find a service";
+
+document
+.getElementById("subtitulo")
+.innerText =
+"Choose a service and send your request quickly.";
+
+document
+.getElementById("tituloServicos")
+.innerText =
+"Services";
+
+}
+
+};
+
+</script>
 
 </body>
 
 </html>
+```
